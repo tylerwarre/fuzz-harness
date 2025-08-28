@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build ./base-img --file Dockerfile --tag docker.io/tylerwarre/fuzz-base:$(date +%s)
+      run: cd base-img && docker build . --file Dockerfile --tag docker.io/tylerwarre/fuzz-base:$(date +%s)
